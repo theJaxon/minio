@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minio-mc
+spec:
+  template:
+    spec:
+      containers:
+      - name: minio-mc
+        image: minio/mc
+        env:
+        - name: MC_HOST_minio
+          value: "http://minioadmin:minioadmin@minio.minio.svc.cluster.local:9000"
+        command: ["sleep", "3600"]
