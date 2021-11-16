@@ -1,5 +1,6 @@
 # Minio 
 ![Minio](https://img.shields.io/badge/-Minio-D24939?style=for-the-badge&logo=amazon%20s3&logoColor=white)
+
 Deploying standalone [minio](https://github.com/minio/minio) - A High Performance, Kubernetes Native Object Storage 
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
