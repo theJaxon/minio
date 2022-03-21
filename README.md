@@ -53,11 +53,11 @@ kustomize build minio-mc | kubectl apply -f -
 
 ```bash
 # List buckets 
-minio ls minio
+mc ls minio
 
 # Create a bucket 
-minio mb minio/my-bucket
+mc mb minio/my-bucket
 
 # Copy a file to the bucket 
-minio cp sample.txt minio/my-bucket
+mc cp sample.txt minio/my-bucket
 ```
