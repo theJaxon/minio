@@ -3,12 +3,8 @@ kind: Kustomization
 namespace: minio
 commonLabels:
   app: minio
-  
 resources:
-- deployment.yaml
-- namespace.yaml
-- service.yaml
-
-replicas:
-- name: minio
-  count: 1
+- minio-namespace.yaml
+- minio-pvc.yaml
+- minio-statefulset.yaml
+- minio-service-headless.yaml

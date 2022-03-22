@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: minio
+spec:
+  replicas: 1
+  serviceName: minio-headless
+  template:
+    spec:
+      containers:
+      - name: minio
+        image: minio/minio
+        ports:
+        - containerPort: 9001
+        args: 
+        - server
+        - --address
+        - :9000
+        - --console-address 
+        - :9001
+        - /storage
+        volumeMounts:
+        - name: minio-storage
+          mountPath: /storage
+
+  volumeClaimTemplates:
+  - metadata:
+      name: minio-storage
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      storageClassName: local-path
+      resources:
+        requests:
+          storage: 2Gi
