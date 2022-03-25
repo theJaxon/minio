@@ -5,6 +5,5 @@ commonLabels:
   app: minio
 resources:
 - minio-namespace.yaml
-- minio-pvc.yaml
 - minio-statefulset.yaml
 - minio-service-headless.yaml
